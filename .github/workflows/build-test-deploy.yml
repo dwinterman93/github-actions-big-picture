@@ -29,7 +29,7 @@ jobs:
       - run: npm install
       - run: npm test
    
-  deployment:
+  deploy:
     needs: test
     
     permissions:
@@ -65,7 +65,5 @@ jobs:
       - name: deploy
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          token: $({ secrets.GITHUB_TOKEN })   
         
 
